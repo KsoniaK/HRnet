@@ -1,0 +1,66 @@
+h1{
+  text-align: center;
+  margin-bottom: 5rem;
+}
+form{
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+form select{
+  padding: .5rem;
+}
+.employee-name_container label{
+  margin-right: 1rem;
+  margin-left: 1rem;
+}
+.employee-name_container input{
+  padding: .4rem;
+}
+.address{
+  margin-top: 3rem;
+  padding: 1.5rem;
+  border: 1px solid #92ad19;
+  border-radius: .5rem;
+}
+.address label{
+  margin-right: .5rem;
+  margin-left: 1rem;
+}
+.address input{
+  padding: .4rem;
+
+}
+.adresse-first_label{
+  margin-left: 0!important;
+}
+.submit-container{
+  text-align: center;
+  margin-top: 2rem;
+}
+.submit-container button{
+  cursor: pointer;
+  padding: 1rem;
+  background-color: #92ad19;
+  border: none;
+  border-radius: .3rem;
+  color: white;
+  font-size: medium;
+}
+
+@media (min-width: 320px) and (max-width: 719px){
+  .employee-name_container label{
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .address label{
+    margin-right: 1rem;
+    margin-left: 0;
+  }
+  .address input, select{
+    margin-bottom: 1rem;
+  }
+  .employee-name_container input{
+  margin-bottom: 1rem;
+  }
+}

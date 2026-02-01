@@ -1,0 +1,26 @@
+.nav-header{
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  align-items: center;
+}
+.nav-header img{
+  width: 20%;
+}
+.nav-header button{
+  cursor: pointer;
+  padding: 1rem;
+  background-color: #92ad19;
+  border: none;
+  border-radius: .3rem;
+  color: white;
+  font-size: medium;
+}
+
+@media (min-width: 320px) and (max-width: 719px){
+  .nav-header{
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    text-align: center;
+  }
+}

@@ -1,0 +1,86 @@
+/* -------------------------- Overlay -------------------------- */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6); /* fond sombre semi-transparent */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+
+  /* animation fade-in */
+  opacity: 0;
+  animation: fadeIn 0.3s forwards;
+}
+
+/* -------------------------- Modale -------------------------- */
+.modal {
+  background-color: #fff;
+  padding: 30px 40px;
+  border-radius: 12px;
+  min-width: 320px;
+  max-width: 500px;
+  width: 90%;
+  position: relative;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+
+  /* animation scale-in */
+  transform: scale(0.9);
+  animation: scaleIn 0.3s forwards;
+}
+
+/* -------------------------- Bouton de fermeture -------------------------- */
+.closeBtn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  border: none;
+  background: transparent;
+  font-size: 20px;
+  cursor: pointer;
+  color: #333;
+  transition: color 0.2s;
+}
+
+.closeBtn:hover {
+  color: #ff4d4f;
+}
+
+/* -------------------------- Contenu -------------------------- */
+.modal h2 {
+  margin-top: 0;
+  font-size: 1.5rem;
+  color: #222;
+}
+
+.modal p {
+  margin: 10px 0 0;
+  font-size: 1.5rem;
+  color: black;
+  line-height: 1.5;
+  font-weight: bold;
+}
+
+/* -------------------------- Animations -------------------------- */
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes scaleIn {
+  to {
+    transform: scale(1);
+  }
+}
+
+/* -------------------------- Responsive -------------------------- */
+@media (max-width: 400px) {
+  .modal {
+    padding: 20px;
+    min-width: 90%;
+  }
+}
