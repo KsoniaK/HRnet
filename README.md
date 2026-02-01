@@ -21,8 +21,8 @@ La migration vers React permet une application plus moderne, maintenable et évo
 ## Lancer le projet :
 
 ### En mode développement : 
-  `npm install`
-  `npm run dev`
+~~  npm install
+  npm run dev~~
 
 ### En mode production (audit Lighthouse recommandé) :
   npm run build
