@@ -1,16 +1,29 @@
-# React + Vite
+Objectif du projet HRnet : 
+Migrer l’application interne HRnet d’une version jQuery vers React, afin de moderniser l’architecture, réduire la dette technique et améliorer la maintenabilité du code.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Technologies : 
+Avant : HTML, CSS, JavaScript, jQuery, jQuery UI, jQuery Modal, jQuery DataTables
+Après : React, React Router, MUI DataTable, Vite, LocalStorage
 
-Currently, two official plugins are available:
+Fonctionnalités principales :
+- Création d’un employé via un formulaire React
+- Sauvegarde des données dans le localStorage
+- Affichage d’une modale de confirmation
+- Liste des employés via un tableau permettant la suppression d'un employé
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Remplacement des plugins jQuery : 
+Refactoriser un plugin jQuery en React = la modale.
+Pour les autres fonctionnalités (datepicker, menus, tableau), utilisation de librairies React existantes.
 
-## React Compiler
+En Bref : 
+La migration vers React permet une application plus moderne, maintenable et évolutive, tout en respectant les fonctionnalités existantes de HRnet.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Lancer le projet :
+En mode développement : 
+  npm install
+  npm run dev
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+En mode production (audit Lighthouse recommandé) :
+  npm run build
+  npm run preview
+    http://localhost:4173
