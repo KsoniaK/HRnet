@@ -9,20 +9,25 @@ function Header(){
 
   return(
     <nav className="nav-header">
-      <Link to={"./"}>
-        <img src={Logo} alt="logo" />
-      </Link>
-      {
-        isCreateEmployeePage ? (
-          <Link to="/employees">
-            <button>Liste des employés</button>
-          </Link>
-        ) : (
-          <Link to="/">
-            <button>Créer un employé</button>
-          </Link>
-        )
-      }
+      <div>
+        <Link to={"./"}>
+          <img src={Logo} alt="logo" />
+        </Link>
+        <p>With HRnet</p>
+      </div>
+      <div>
+        {
+          isCreateEmployeePage ? (
+            <Link to="/employees">
+              <button>Liste des employés</button>
+            </Link>
+          ) : (
+            <Link to="/">
+              <button>Créer un employé</button>
+            </Link>
+          )
+        }
+      </div>
     </nav>
   )
 }

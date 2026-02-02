@@ -70,106 +70,125 @@ function CreateEmployee() {
       <h1>Create Employee</h1>
       <form onSubmit={handleSubmit} autoComplete="off">
         <section className="employee-name_container">
-          <label>First Name</label>
-          <input
-            type="text"
-            name="firstName"
-            value={formData.firstName}
-            onChange={handleChange}
-            required
-          />
-          
-          <label>Last Name</label>
-          <input
-            type="text"
-            name="lastName"
-            value={formData.lastName}
-            onChange={handleChange}
-            required
-          />
+          <div className="form-field">
+            <label>First Name</label>
+            <input
+              type="text"
+              name="firstName"
+              value={formData.firstName}
+              onChange={handleChange}
+              required
+            />
+          </div>
 
-          <label>Date of Birth</label>
-          <DatePicker
-            selected={formData.dateOfBirth}
-            onChange={(date) =>
-              setFormData((prev) => ({ ...prev, dateOfBirth: date }))
-            }
-            dateFormat="MM/dd/yyyy"
-            placeholderText="Select date of birth"
-            required
-          />
+          <div className="form-field">
+            <label>Last Name</label>
+            <input
+              type="text"
+              name="lastName"
+              value={formData.lastName}
+              onChange={handleChange}
+              required
+            />
+          </div>
 
-          <label>Start Date</label>
-          <DatePicker
-            selected={formData.startDate}
-            onChange={(date) =>
-              setFormData((prev) => ({ ...prev, startDate: date }))
-            }
-            dateFormat="MM/dd/yyyy"
-            placeholderText="Select start date"
-            required
-          />
+          <div className="form-field">
+            <label>Date of Birth</label>
+            <DatePicker
+              selected={formData.dateOfBirth}
+              onChange={(date) =>
+                setFormData((prev) => ({ ...prev, dateOfBirth: date }))
+              }
+              dateFormat="MM/dd/yyyy"
+              placeholderText="Select date of birth"
+              required
+            />
+          </div>
+
+          <div className="form-field">
+            <label>Start Date</label>
+            <DatePicker
+              selected={formData.startDate}
+              onChange={(date) =>
+                setFormData((prev) => ({ ...prev, startDate: date }))
+              }
+              dateFormat="MM/dd/yyyy"
+              placeholderText="Select start date"
+              required
+            />
+          </div>
         </section>
+
 
         <fieldset className="address">
           <legend>Address</legend>
 
-          <label className="adresse-first_label">Street</label>
-          <input
-            type="text"
-            name="street"
-            value={formData.street}
-            onChange={handleChange}
-            required
-          />
+          <div className="form-field">
+            <label className="adresse-first_label">Street</label>
+            <input
+              type="text"
+              name="street"
+              value={formData.street}
+              onChange={handleChange}
+              required
+            />
+          </div>
 
-          <label>City</label>
-          <input
-            type="text"
-            name="city"
-            value={formData.city}
-            onChange={handleChange}
-            required
-          />
+          <div className="form-field">
+            <label>City</label>
+            <input
+              type="text"
+              name="city"
+              value={formData.city}
+              onChange={handleChange}
+              required
+            />
+          </div>
 
-          <label>State</label>
+          <div className="form-field">
+            <label>State</label>
+            <select
+              name="state"
+              value={formData.state}
+              onChange={handleChange}
+              required
+            >
+              <option value="">Select a state</option>
+              {states.map((s) => (
+                <option key={s.abbreviation} value={s.abbreviation}>
+                  {s.name}
+                </option>
+              ))}
+            </select>
+          </div>
+
+          <div className="form-field">
+            <label>Zip Code</label>
+            <input
+              type="number"
+              name="zipCode"
+              value={formData.zipCode}
+              onChange={handleChange}
+              required
+            />
+          </div>
+
+        <div className="form-field">
+          <label>Department</label>
           <select
-            name="state"
-            value={formData.state}
+            name="department"
+            value={formData.department}
             onChange={handleChange}
             required
           >
-            <option value="">Select a state</option>
-            {states.map((s) => (
-              <option key={s.abbreviation} value={s.abbreviation}>
-                {s.name}
-              </option>
-            ))}
+            <option value="">Select a department</option>
+            <option>Sales</option>
+            <option>Marketing</option>
+            <option>Engineering</option>
+            <option>Human Resources</option>
+            <option>Legal</option>
           </select>
-
-          <label>Zip Code</label>
-          <input
-            type="number"
-            name="zipCode"
-            value={formData.zipCode}
-            onChange={handleChange}
-            required
-          />
-
-        <label>Department</label>
-        <select
-          name="department"
-          value={formData.department}
-          onChange={handleChange}
-          required
-        >
-          <option value="">Select a department</option>
-          <option>Sales</option>
-          <option>Marketing</option>
-          <option>Engineering</option>
-          <option>Human Resources</option>
-          <option>Legal</option>
-        </select>
+        </div>
 
         </fieldset>
 

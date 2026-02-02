@@ -10,23 +10,46 @@ form{
 form select{
   padding: .5rem;
 }
-.employee-name_container label{
-  margin-right: 1rem;
-  margin-left: 1rem;
+.employee-name_container{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem 2rem;
 }
-.employee-name_container input{
+.form-field {
+  display: flex;
+  flex-direction: column;
+}
+.form-field input{
   padding: .4rem;
+}
+.form-field label {
+  margin-bottom: 0.3rem;
+  font-weight: bold;
+}
+.form-field input,
+.form-field .react-datepicker-wrapper {
+  width: 100%;
+}
+.form-field input,
+.form-field select,
+.form-field .react-datepicker-wrapper,
+.form-field .react-datepicker-wrapper input {
+  width: 100%;
+  box-sizing: border-box;
 }
 .address{
   margin-top: 3rem;
   padding: 1.5rem;
   border: 1px solid #92ad19;
   border-radius: .5rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem 2rem;
 }
-.address label{
+/* .address label{
   margin-right: .5rem;
   margin-left: 1rem;
-}
+} */
 .address input{
   padding: .4rem;
 
@@ -47,20 +70,21 @@ form select{
   color: white;
   font-size: medium;
 }
-
 @media (min-width: 320px) and (max-width: 719px){
-  .employee-name_container label{
-    margin-left: 0;
-    margin-right: 0;
+  .employee-name_container {
+    grid-template-columns: repeat(1, 1fr);
   }
-  .address label{
-    margin-right: 1rem;
-    margin-left: 0;
+  .employee-name_container input{
+    margin-bottom: 1rem;
+  }
+  .address{
+    grid-template-columns: repeat(1, 1fr);
   }
   .address input, select{
     margin-bottom: 1rem;
   }
-  .employee-name_container input{
-  margin-bottom: 1rem;
+  .nav-header img {
+    width: 12%!important;
+    margin-bottom: 2rem;
   }
 }
