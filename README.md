@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="src/assets/img/logo.png" alt="Logo HRnet" width="100">
+</p>
+
 # Objectif du projet HRnet : 
 Migrer l’application interne HRnet d’une version jQuery vers React, afin de moderniser l’architecture, réduire la dette technique et améliorer la maintenabilité du code.
 
