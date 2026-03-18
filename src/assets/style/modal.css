@@ -49,6 +49,15 @@
   color: #ff4d4f;
 }
 
+.delete_button-modal{
+  background-color: "#f44336";
+  color: "white";
+  border: "none";
+  padding: "4px 8px";
+  border-radius: "4px";
+  cursor: "pointer";
+}
+
 /* -------------------------- Contenu -------------------------- */
 .modal h2 {
   margin-top: 0;

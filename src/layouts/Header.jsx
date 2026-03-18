@@ -4,7 +4,9 @@ import Logo from "../assets/img/logo.png";
 import "../assets/style/header.css";
 
 function Header(){
+  // hook de React Router qui récupère le chemin actuel (location.pathname) / location = contient l’URL actuelle
   const location = useLocation();
+  // isCreateEmployeePage = booléen qui vérifie si on est sur la page “Create Employee”
   const isCreateEmployeePage = location.pathname === "/";
 
   return(
@@ -17,11 +19,13 @@ function Header(){
       </div>
       <div>
         {
+          // Si on est sur Create Employee -> bouton pour aller vers liste des employés
           isCreateEmployeePage ? (
             <Link to="/employees">
               <button>Liste des employés</button>
             </Link>
           ) : (
+            // Sinon -> bouton pour Créer un employé
             <Link to="/">
               <button>Créer un employé</button>
             </Link>

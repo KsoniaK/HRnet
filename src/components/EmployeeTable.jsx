@@ -1,10 +1,13 @@
-// src/components/EmployeeTable.jsx
 import React from "react";
+// Cette librairie remplace le plugin jQuery DataTables
 import MUIDataTable from "mui-datatables";
-import "../assets/style/employeeTable.css";
+import "../assets/style/modal.css";
 
-export default function EmployeeTable({ employees, onDelete }) {
+// EmployeeTable = composant React / { employees, onDelete } = props reçues
+export default function EmployeeTable({ employees, onDelete }) { // employees = liste des employés / onDelete = fonction pour supprimer un employé
+  // On définit la structure des colonnes du tableau
   const columns = [
+    // name = clé dans l’objet employee / label = texte affiché dans le tableau
     { name: "firstName", label: "First Name" },
     { name: "lastName", label: "Last Name" },
     { name: "startDate", label: "Start Date" },
@@ -15,25 +18,19 @@ export default function EmployeeTable({ employees, onDelete }) {
     { name: "state", label: "State" },
     { name: "zipCode", label: "Zip Code" },
     {
+      // On crée une colonne personnalisée pour les actions (ici supprimer)
       name: "actions",
       label: "Actions",
       options: {
         filter: false,
         sort: false,
+        // dataIndex = index de la ligne dans le tableau = permet de savoir quel employé est concerné
         customBodyRenderLite: (dataIndex) => {
           return (
             <button
-              style={{
-                backgroundColor: "#f44336",
-                color: "white",
-                border: "none",
-                padding: "4px 8px",
-                borderRadius: "4px",
-                cursor: "pointer",
-              }}
-              onClick={() => onDelete(employees[dataIndex])}
-            >
-              Delete
+              // employees[dataIndex] = bon employé = récupère l’employé grâce à son index pour déclencher la suppression
+              className="delete_button-modal" onClick={() => onDelete(employees[dataIndex])}>
+                Delete
             </button>
           );
         },
@@ -41,6 +38,7 @@ export default function EmployeeTable({ employees, onDelete }) {
     },
   ];
 
+  // Configuration globale du tableau
   const options = {
     selectableRows: "none", // pas de checkbox
     rowsPerPageOptions: [10, 25, 50, 100],
@@ -48,6 +46,7 @@ export default function EmployeeTable({ employees, onDelete }) {
     download: false,
     print: false,
     search: true,
+    // Permet de personnaliser les textes du tableau
     textLabels: {
       pagination: {
         next: "Next",
@@ -68,6 +67,7 @@ export default function EmployeeTable({ employees, onDelete }) {
   return (
     <MUIDataTable
       title={"Current Employees"}
+      // Données du tableau (les employés)
       data={employees}
       columns={columns}
       options={options}

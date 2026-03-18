@@ -3,12 +3,13 @@ import "../assets/style/modal.css";
 
 
 function Modal({ isOpen, onClose, children }) {
-  if (!isOpen) return null; // Ne rien afficher si la modale est fermée
+  // // Ne rien afficher si la modale est fermée
+  if (!isOpen) return null; 
 
   return (
     <div className="overlay">
       <div className="modal">
-        <button className="closeBtn" onClick={onClose}>✖</button>
+        <button className="closeBtn" onClick={onClose}>x</button>
         {children}
       </div>
     </div>

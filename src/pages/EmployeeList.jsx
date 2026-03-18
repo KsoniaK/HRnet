@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+// MUIDataTable : tableau interactif avec pagination, recherche et options
 import MUIDataTable from "mui-datatables";
 import Modal from "../components/Modal";
 import "../assets/style/employeeList.css";
 
 function EmployeeList() {
+  // employees : liste des employés stockée dans l’état, initialisée depuis localStorage
   const [employees, setEmployees] = useState(() => {
     return JSON.parse(localStorage.getItem("employees")) || [];
   });
@@ -12,20 +14,26 @@ function EmployeeList() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [modalMessage, setModalMessage] = useState("");
 
-  // Supprimer un employé
+  // Supprimer un employé / Vérifie si un employé est passé en argument
   const handleDelete = (employeeToDelete) => {
+    // Si aucun employé n’est fourni, on ne fait rien et on sort de la fonction
     if (!employeeToDelete) return;
 
+    // filter : crée un nouveau tableau sans l’employé supprimé.
     const updatedEmployees = employees.filter(
       (emp) =>
+        // Ici, on compare firstName, lastName et dateOfBirth pour identifier l’employé unique
         emp.firstName !== employeeToDelete.firstName ||
         emp.lastName !== employeeToDelete.lastName ||
         emp.dateOfBirth !== employeeToDelete.dateOfBirth
     );
 
+    // Met à jour localStorage et l’état React
     localStorage.setItem("employees", JSON.stringify(updatedEmployees));
+    // Met à jour l’état employees avec le nouveau tableau
     setEmployees(updatedEmployees);
 
+    // Affiche la modale avec le message de confirmation
     setModalMessage("Employee deleted!");
     setIsModalOpen(true);
   };
@@ -46,7 +54,8 @@ function EmployeeList() {
       options: {
         filter: false,
         sort: false,
-        customBodyRenderLite: (dataIndex) => (
+        // customBodyRenderLite : permet d’afficher un bouton Delete dans la colonne “Action”.
+        customBodyRenderLite: (dataIndex) => ( // dataIndex = index de l’employé dans le tableau employees
           <button
           className="delete_button"
             onClick={() => handleDelete(employees[dataIndex])}
