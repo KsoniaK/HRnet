@@ -3,7 +3,7 @@ import "../assets/style/modal.css";
 
 
 function Modal({ isOpen, onClose, children }) {
-  // // Ne rien afficher si la modale est fermée
+  // Ne rien afficher si la modale est fermée
   if (!isOpen) return null; 
 
   return (

@@ -34,7 +34,7 @@ function EmployeeList() {
     setEmployees(updatedEmployees);
 
     // Affiche la modale avec le message de confirmation
-    setModalMessage("Employee deleted!");
+    setModalMessage( "The employee " + employeeToDelete.firstName + " " + employeeToDelete.lastName + " has been deleted!");
     setIsModalOpen(true);
   };
 
