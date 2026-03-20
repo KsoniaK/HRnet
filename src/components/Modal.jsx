@@ -1,5 +1,7 @@
 import React from "react";
-import "../assets/style/modal.css";
+import "./modal.css";
+// import "../../hrnet-modal/src/modal.css";
+
 
 
 function Modal({ isOpen, onClose, children }) {

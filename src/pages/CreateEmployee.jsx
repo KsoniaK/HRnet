@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import Modal from "../components/Modal";
+import { Modal } from "hrnet-modal-kechit";
+// import Modal from "../components/Modal";
 // DatePicker : calendrier React pour remplacer le plugin jQuery datetimepicker
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";

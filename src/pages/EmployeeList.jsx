@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 // MUIDataTable : tableau interactif avec pagination, recherche et options
 import MUIDataTable from "mui-datatables";
-import Modal from "../components/Modal";
+import { Modal } from "hrnet-modal-kechit";
+// import Modal from "../components/Modal";
 import "../assets/style/employeeList.css";
 
 function EmployeeList() {
