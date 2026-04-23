@@ -1,0 +1,3 @@
+[submodule "hrnet-modal"]
+	path = hrnet-modal
+	url = https://github.com/KsoniaK/hrnet-modal.git
