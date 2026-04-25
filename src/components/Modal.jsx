@@ -1,20 +1,20 @@
-import React from "react";
-import "./modal.css";
-// import "../../hrnet-modal/src/modal.css";
+// import React from "react";
+// import "./modal.css";
+// // import "../../hrnet-modal/src/modal.css";
 
 
 
-function Modal({ isOpen, onClose, children }) {
-  // Ne rien afficher si la modale est fermée
-  if (!isOpen) return null; 
+// function Modal({ isOpen, onClose, children }) {
+//   // Ne rien afficher si la modale est fermée
+//   if (!isOpen) return null; 
 
-  return (
-    <div className="overlay">
-      <div className="modal">
-        <button className="closeBtn" onClick={onClose}>x</button>
-        {children}
-      </div>
-    </div>
-  );
-}
-export default Modal;
+//   return (
+//     <div className="overlay">
+//       <div className="modal">
+//         <button className="closeBtn" onClick={onClose}>x</button>
+//         {children}
+//       </div>
+//     </div>
+//   );
+// }
+// export default Modal;

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { Modal } from "hrnet-modal-kechit";
+import Dropdown from "../components/DropDown";
 // import Modal from "../components/Modal";
 // DatePicker : calendrier React pour remplacer le plugin jQuery datetimepicker
 import DatePicker from "react-datepicker";
@@ -50,10 +51,12 @@ function CreateEmployee() {
 
     // Sauvegarde dans localStorage
       // Récupère la liste existante ou crée un tableau vide.
+        // JSON.parse = Transforme cette chaîne JSON en un objet JavaScript utilisable (sans lui juste chaîne de caractères pas un tableau d'objets) / localStorage ne stocke que des chaînes de caractères (string)
     const storedEmployees = JSON.parse(localStorage.getItem("employees")) || [];
     // Ajoute le nouvel employé.
     storedEmployees.push(formData);
-    localStorage.setItem("employees", JSON.stringify(storedEmployees));
+    // localStorage.setItem = Méthode pour stocker une valeur associée à une clé dans le localStorage du navigateur
+    localStorage.setItem("employees", JSON.stringify(storedEmployees)); // JSON.stringify = convertir en chaîne JSON
 
     // Active la modale pour confirmer la création
     setIsModalOpen(true);
@@ -160,21 +163,15 @@ function CreateEmployee() {
           </div>
 
           <div className="form-field">
-            <label>State</label>
-            <select
+            {/* <label>State</label> */}
+            <Dropdown
+              label="State"
               name="state"
               value={formData.state}
               onChange={handleChange}
               required
-            >
-              {/* Le select est dynamique et maintenable : si on ajoute un état, le code s’adapte automatiquement */}
-              <option value="">Select a state</option>
-              {states.map((s) => (
-                <option key={s.abbreviation} value={s.abbreviation}>
-                  {s.name}
-                </option>
-              ))}
-            </select>
+              options={states.map((s) => ({ value: s.abbreviation, label: s.name }))}
+            />
           </div>
 
           <div className="form-field">
@@ -189,20 +186,21 @@ function CreateEmployee() {
           </div>
 
         <div className="form-field">
-          <label>Department</label>
-          <select
+          {/* <label>Department</label> */}
+          <Dropdown
+            label="Department"
             name="department"
             value={formData.department}
             onChange={handleChange}
             required
-          >
-            <option value="">Select a department</option>
-            <option>Sales</option>
-            <option>Marketing</option>
-            <option>Engineering</option>
-            <option>Human Resources</option>
-            <option>Legal</option>
-          </select>
+            options={[
+              "Sales",
+              "Marketing",
+              "Engineering",
+              "Human Resources",
+              "Legal",
+            ]}
+          />
         </div>
 
         </fieldset>
