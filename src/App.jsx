@@ -6,6 +6,8 @@ import Header from "./layouts/Header";
 import "./assets/style/index.css";
 
 function App() {
+  // const basename = import.meta.env.PROD ? "/HRnet/" : "/";
+
   return (
     <Router>
       <Header/>

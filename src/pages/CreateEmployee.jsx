@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { Modal } from "hrnet-modal-kechit";
+// import { Modal } from "hrnet-modal-kechit";
 import Dropdown from "../components/DropDown";
 // import Modal from "../components/Modal";
 // DatePicker : calendrier React pour remplacer le plugin jQuery datetimepicker
@@ -32,7 +32,7 @@ function CreateEmployee() {
     department: "",
   });
 
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  // const [isModalOpen, setIsModalOpen] = useState(false);
 
   // Gestion des changements des inputs texte et select
   const handleChange = (e) => {
@@ -59,7 +59,7 @@ function CreateEmployee() {
     localStorage.setItem("employees", JSON.stringify(storedEmployees)); // JSON.stringify = convertir en chaîne JSON
 
     // Active la modale pour confirmer la création
-    setIsModalOpen(true);
+    // setIsModalOpen(true);
 
     // Vide tous les champs après l’envoi
     setFormData({
@@ -211,9 +211,9 @@ function CreateEmployee() {
       </form>
 
       {/* Modale de confirmation */}
-      <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
+      {/* <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
         <h2>Employee Created!</h2>
-      </Modal>
+      </Modal> */}
     </div>
   );
 }
