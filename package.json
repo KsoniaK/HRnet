@@ -2,6 +2,7 @@
   "name": "hrnet-react",
   "private": false,
   "version": "0.0.0",
+  "homepage": "https://ksoniak.github.io/HRnet/",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -17,7 +18,7 @@
     "@mui/icons-material": "^5.18.0",
     "@mui/material": "^7.3.7",
     "date-fns": "^4.1.0",
-    "hrnet-modal-kechit": "^1.0.7",
+    "hrnet-modal-kechit": "^1.0.8",
     "mui-datatables": "^4.3.0",
     "react": "^19.2.0",
     "react-datepicker": "^9.1.0",

@@ -2,8 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 // MUIDataTable : tableau interactif avec pagination, recherche et options
 import MUIDataTable from "mui-datatables";
-// import { Modal } from "hrnet-modal-kechit";
-// import Modal from "../components/Modal";
+import { Modal } from "hrnet-modal-kechit";
 import "../assets/style/employeeList.css";
 
 function EmployeeList() {
@@ -12,8 +11,8 @@ function EmployeeList() {
     return JSON.parse(localStorage.getItem("employees")) || [];
   });
 
-  // const [isModalOpen, setIsModalOpen] = useState(false);
-  // const [modalMessage, setModalMessage] = useState("");
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [modalMessage, setModalMessage] = useState("");
 
   // Supprimer un employé / Vérifie si un employé est passé en argument
   const handleDelete = (employeeToDelete) => {
@@ -35,8 +34,8 @@ function EmployeeList() {
     setEmployees(updatedEmployees);
 
     // Affiche la modale avec le message de confirmation
-    // setModalMessage( "The employee " + employeeToDelete.firstName + " " + employeeToDelete.lastName + " has been deleted!");
-    // setIsModalOpen(true);
+    setModalMessage( "The employee " + employeeToDelete.firstName + " " + employeeToDelete.lastName + " has been deleted!");
+    setIsModalOpen(true);
   };
 
   const columns = [
@@ -103,9 +102,9 @@ function EmployeeList() {
     <div className="employee-list_container">
       <h1>Current Employees</h1>
       <MUIDataTable data={employees} columns={columns} options={options} />
-      {/* <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
+      <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
         <p>{modalMessage}</p>
-      </Modal> */}
+      </Modal>
     </div>
   );
 }
