@@ -1,6 +1,5 @@
 // import React from "react";
-// import "./modal.css";
-// // import "../../hrnet-modal/src/modal.css";
+// import "../assets/style/modal.css";
 
 
 
