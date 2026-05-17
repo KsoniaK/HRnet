@@ -9,7 +9,7 @@ function App() {
   // const basename = import.meta.env.PROD ? "/HRnet/" : "/";
 
   return (
-    <Router>
+    <Router basename={import.meta.env.DEV ? "/" : "/HRnet"}>
       <Header/>
         <Routes>
           <Route path="/" element={<CreateEmployee />} />
